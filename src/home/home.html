@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/src/home/style/nav.css">
     <link rel="stylesheet" href="/src/home/style/style.css">
     <link rel="stylesheet" href="/src/home/style/home.css">
+    <link rel="stylesheet" href="/src/home/style/slide.css">
     
     <title>Home</title>
 </head>
@@ -29,7 +30,7 @@
             </ul>
 
             <button class="btn-default">
-                <a href="/src/login/login.html">Entrar</a>
+                <a href="/src/login/login.html">Navegar</a>
             </button>
             <button id="mobile_btn">
                 <i class="fa-solid fa-bars"></i>
@@ -56,22 +57,25 @@
     </header>
         <main id="content">
             <section id="home">
-                <div class="shape"></div>
+                
                 <div id="cta">
                     <h1 class="title">
                         Descubra o <span>melhor</span> de Jaú em um só lugar
                     </h1>
                     <p class="description">
                         Bem-vindo ao Guia da Cidade de Jaú!
-                         Aqui você encontra tudo o que precisa 
-                         para conhecer a cidade: seus principais pontos turísticos, 
-                         opções de lazer, gastronomia, cultura, história e serviços úteis. 
-                         Navegue e descubra o melhor de Jaú, desde os lugares mais famosos até aqueles cantinhos que só quem é daqui conhece
+                          Aqui você encontra tudo o que precisa 
+                          para conhecer a cidade: seus principais pontos turísticos, 
+                          opções de lazer, gastronomia, cultura, história e serviços úteis. 
+                          Navegue e descubra o melhor de Jaú, desde os lugares mais famosos até aqueles cantinhos que só quem é daqui conhece
                     </p>
 
                     <div id="cta_buttons">
                         <a href="#" class="btn-default">
-                            Navegar
+                            Logar
+                        </a>
+                        <a href="#" class="btn-default">
+                            Cadastrar-se
                         </a>
                     </div>
 
@@ -91,11 +95,48 @@
                     </div>
 
                 </div>
-                <div id="slide">
-                    <img src="/src/image/slide1.jpeg" alt="">
+                
+                <div class="shape">
+                    <div id="slider">
+                        <input type="radio" name="radio-btn" id="radio1" checked>
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
+                        <input type="radio" name="radio-btn" id="radio4">
+
+                        <div class="slides">
+                            <div class="slide first">
+                                <img src="/src/image/casarao.jpg" alt="imagem 1">
+                            </div>
+                            <div class="slide">
+                                <img src="/src/image/lago.jpg" alt="imagem 2">
+                            </div>
+                            <div class="slide">
+                                <img src="/src/image/catedral2.jpg" alt="imagem 3">
+                            </div>
+                            <div class="slide">
+                                <img src="/src/image/expo.jpg" alt="imagem 4">
+                            </div>
+
+
+                            <div class="navigation">
+                                <div class="auto-btn1"></div>
+                                <div class="auto-btn2"></div>
+                                <div class="auto-btn3"></div>
+                                <div class="auto-btn4"></div>
+                            
+                            </div>
+                        </div>
+                        <div class="manual-navigation">
+                            <label for="radio1" class="manual-btn"></label>
+                            <label for="radio2" class="manual-btn"></label>
+                            <label for="radio3" class="manual-btn"></label>
+                            <label for="radio4" class="manual-btn"></label>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
+        <script src="/src/javascript/slide.js"></script>
     <script src="/src/javascript/script.js"></script>
 </body>
 </html>
