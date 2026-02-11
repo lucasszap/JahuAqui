@@ -209,3 +209,15 @@ body{
 .container.active .toggle-right{
     transform: translateX(200%);
 }
+
+button:hover{
+    background-color: #587cf5;
+    font-size: 15px;
+    transition: 0.5s;
+}
+
+a:hover{
+    color: black;
+    font-size: 14px;
+    transition: 0.5s;
+}
