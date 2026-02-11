@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="src/styles/style.css">
+    <link rel="stylesheet" href="src/styles/conteudo.css">
+    <link rel="stylesheet" href="src/styles/nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <header>
+    
+        <nav id="navbar">
+
+           <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <label for="" aria-placeholder="Pesquisar"></label>
+                <input type="text" id="search" placeholder="Pesquisar">
+            </div>
+
+            <ul id="nav_list">
+                <li class="nav-item active" >
+                    <a href="#home">Página Inicial</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#servicos">Serviços</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#transporte">Transporte</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#lazer">Lazer</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#comercio">Comércio</a>
+                </li>
+            </ul>
+
+            <button class="btn-default" onclick="window.location.href='/src/login/login.html'">
+                Entrar  
+            </button>
+            <button class="btn-default" onclick="window.location.href='/src/login/login.html'">
+                Cadastre-se
+            </button>
+            
+            <div class ="user">
+                <i class="fa-solid fa-circle-user"></i>
+            </div>
+    
+        </nav>
+    
+    </header>
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slides">
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+
+                <div class="slide-first">
+                    <img src="/src/image/slide1.jpeg" alt="image 1">
+                </div>
+                <div class="slide">
+                    <img src="/src/image/slide2.jpg" alt="image 2">
+                </div>
+                <div class="slide">
+                    <img src="/src/image/slide3.jpg" alt="image 3">
+                </div>
+                <div class="slide">
+                    <img src="/src/image/slide4.jpg" alt="image 4">
+                </div>
+                <div class="slide">
+                    <img src="/src/image/slide5.jpg" alt="image 5">
+                </div>
+
+                <div class="manual-navegation">
+                    <label for="radio1" class="manual-btn"></label>
+                    <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                    <label for="radio4" class="manual-btn"></label>
+                    <label for="radio5" class="manual-btn"></label>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+   
+
+    
+    
+</body>
+</html>
