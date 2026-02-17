@@ -74,59 +74,66 @@
         </div>
   </header>
 
-  <div class="search-box container my-5">
+  <div class="search-box container my-4">
   <h5 class="mb-3">Escolha a linha que deseja consultar</h5>
 
   <div class="row g-3 align-items-center">
-    <div class="col-md-4">
+    <div class="col-md-3">
       <select class="form-select">
-        <option>Escolha o tipo</option>
+        <option>Escolha o Tipo</option>
         <option>URBANA</option>
       </select>
     </div>
 
-    <div class="col-md-4">
-      <select class="form-select">
-        <option>Escolha a Linha</option>
-        <option>AMÉRICA (VIA HOSP. A. CARVALHO)</option>
-        <option>BELA VISTA</option>
-        <option>CEMITÉRIO (VIA HOSP. SÃO JUDAS)</option>
-        <option>CONDOMÍNIO ITAUNA</option>
-        <option>CONDOMÍNIO PRIMAVERA</option>
-        <option>JAÚ SHOPPING</option>
-        <option>JD DOS IPÊS</option>
-        <option>JOÃO BALAN I-II</option>
-        <option>JORGE ATALLA</option>
-        <option>MARIA CIBELE (VIA JD.CAROLINA/SANTA CASA)</option>
-        <option>MARIA LUIZA IV (PAS SÃO BENEDITO)</option>
-        <option>NOVO HORIZONTE (VIA MARIA IZABEL/SANTA ROSA)</option>
-        <option>OLÍMPIA</option>
-        <option>ORLANDO OMETTO (VIA PEDRO OMETTO)</option>
-        <option>PARATY</option>
-        <option>PE. AUGUSTO SANI (VIA NOVA JAÚ)</option>
-        <option>PDRO OMETTO (VIA JD.BRASÍLIA)</option>
-        <option>RES. FREI GALVÃO (VIA FUNDAÇÃO) / TERMINAL</option>
-        <option>RODRIGUES BRANCO (VIA FUNDAÇÃO)</option>
-        <option>SANTA CASA</option>
-        <option>SANTA HELENA (VIA HOSP. SÃO JUDAS)</option>
-        <option>SÃO JOSÉ</option>
-        <option>VILA NETINHO (VIA SANTA CASA)</option>
+    <div class="col-md-3">
+      <select class="form-select" id="linhaSelect">
+        <option value="">Escolha a Linha</option>
+        <option value="america">AMÉRICA (VIA HOSP. A. CARVALHO)</option>
+        <option value="bela-vista">BELA VISTA</option>
+        <option value="cemiterio">CEMITÉRIO (VIA HOSP. SÃO JUDAS)</option>
+        <option value="cond-itauna">CONDOMÍNIO ITAUNA</option>
+        <option value="cond-primavera">CONDOMÍNIO PRIMAVERA</option>
+        <option value="jau-shopping">JAÚ SHOPPING</option>
+        <option value="jd-ipes">JD DOS IPÊS</option>
+        <option value="joao-balan">JOÃO BALAN I-II</option>
+        <option value="jorge-atalla">JORGE ATALLA</option>
+        <option value="maria-cibele">MARIA CIBELE (VIA JD.CAROLINA/SANTA CASA)</option>
+        <option value="maria-luiza">MARIA LUIZA IV (PAS SÃO BENEDITO)</option>
+        <option value="novo-horizonte">NOVO HORIZONTE (VIA MARIA IZABEL/SANTA ROSA)</option>
+        <option value="olimpia">OLÍMPIA</option>
+        <option value="orlando-ometto">ORLANDO OMETTO (VIA PEDRO OMETTO)</option>
+        <option value="paraty">PARATY</option>
+        <option value="pe-augusto-sani">PE. AUGUSTO SANI (VIA NOVA JAÚ)</option>
+        <option value="pedro-ometto">PEDRO OMETTO (VIA JD.BRASÍLIA)</option>
+        <option value="res-frei-galvao">RES. FREI GALVÃO (VIA FUNDAÇÃO) / TERMINAL</option>
+        <option value="rodrigues-branco">RODRIGUES BRANCO (VIA FUNDAÇÃO)</option>
+        <option value="santa-casa">SANTA CASA</option>
+        <option value="santa-helena">SANTA HELENA (VIA HOSP. SÃO JUDAS)</option>
+        <option value="sao-jose">SÃO JOSÉ</option>
+        <option value="vila-netinho">VILA NETINHO (VIA SANTA CASA)</option>
+      </select>
+    </div>
 
+    <div class="col-md-3">
+      <select class="form-select" id="diaSelect">
+        <option value="">Escolha o Dia</option>
+        <option value="uteis">Úteis</option>
+        <option value="sabado">Sábado</option>
+        <option value="domingo">Domingo e Feriados</option>
       </select>
     </div>
 
     <div class="col-md-2">
-      <button class="btn btn-custom w-100">Procurar</button>
+      <button class="btn btn-custom w-100" id="btnProcurar">Procurar</button>
     </div>
+
+
+
+
+    <div id="resultado"></div>
   </div>
 </div>
 
-
-    
-
-
-
-
-
+ <script src="script.js"></script>
 </body>
 </html>

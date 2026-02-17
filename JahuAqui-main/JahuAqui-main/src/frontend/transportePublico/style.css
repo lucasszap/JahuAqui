@@ -34,3 +34,13 @@ body{
   color: #fff;
 }
 
+.horario-box {
+  background: #1B263B;
+  color: #e0e1dd;
+  padding: 6px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 14px;
+}
+
+
