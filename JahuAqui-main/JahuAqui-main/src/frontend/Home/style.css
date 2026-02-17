@@ -7,6 +7,12 @@
 }
 
 /* animação de fundo */
+body {
+  background: #0D1B2A;
+  overflow-x: hidden;
+  
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -17,22 +23,27 @@ body::before {
 
   background:
     radial-gradient(circle at 20% 30%, #415A77 0%, transparent 40%),
-    radial-gradient(circle at 80% 70%, #E0E1DD 0%, transparent 40%),
-    radial-gradient(circle at 60% 20%, #0D1B2A 0%, transparent 50%);
+    radial-gradient(circle at 70% 60%, #778DA9 0%, transparent 45%),
+    radial-gradient(circle at 50% 20%, #0D1B2A 0%, transparent 55%);
 
-  animation: moveShader 18s linear infinite;
+  animation: shaderMove 25s linear infinite;
+  filter: blur(90px);
   z-index: -1;
-  filter: blur(80px);
 }
 
-@keyframes moveShader {
-  0%   { transform: rotate(0deg) translate(0, 0); }
-  50%  { transform: rotate(180deg) translate(50px, 30px); }
-  100% { transform: rotate(360deg) translate(0, 0); }
+@keyframes shaderMove {
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(180deg); }
+  100% { transform: rotate(360deg); }
 }
+
+header, main{
+  color: #e0e1dd;
+}
+
 
 span{
-    color: #778da9;
+    color: #caf0f8;
 }
 
 .cover-container {
