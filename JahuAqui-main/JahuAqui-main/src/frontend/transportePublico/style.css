@@ -1,0 +1,36 @@
+header{
+    background-color:#0d1b2a;
+}
+
+body{
+  background-color: #E0E1DD;
+}
+
+.user-link,
+.user-link:hover,
+.user-link:focus,
+.user-link:active {
+  color: #fff !important;
+}
+
+.search-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.btn-custom {
+  background-color: #0d1b2a; /* cor normal */
+  color: #fff;
+  border: none;
+  transition: 0.3s;
+  border: 3px #e0e1dd;
+}
+
+.btn-custom:hover {
+  background-color: #778da9; /* cor ao passar mouse */
+  color: #fff;
+}
+
