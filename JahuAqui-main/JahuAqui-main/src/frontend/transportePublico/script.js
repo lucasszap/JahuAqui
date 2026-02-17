@@ -1,58 +1,69 @@
 const btn = document.getElementById("btnProcurar");
-const selectLinha = document.getElementById("linhaSelect");
-const selectDia = document.getElementById("diaSelect");
+const select = document.getElementById("linhaSelect");
+const diaSelect = document.getElementById("diaSelect");
 const resultado = document.getElementById("resultado");
 
 btn.addEventListener("click", async () => {
+    const linhaEscolhida = select.value;
+    const diaEscolhido = diaSelect.value;
 
-  const linhaEscolhida = selectLinha.value;
-  const diaEscolhido = selectDia.value;
-
-  if (!linhaEscolhida) {
-    resultado.innerHTML = "Selecione uma linha primeiro!";
-    return;
-  }
-
-  try {
-    const response = await fetch("dados.json");
-    const dados = await response.json();
-
-    const linha = dados[linhaEscolhida];
-
-    if (!linha) {
-      resultado.innerHTML = "Linha não encontrada.";
-      return;
+    // Validação de ambos os campos
+    if (!linhaEscolhida || !diaEscolhido) {
+        resultado.innerHTML = `
+            <div class="alert alert-warning text-center">
+                <i class="fa-solid fa-circle-exclamation me-2"></i>
+                Por favor, selecione a <strong>Linha</strong> e o <strong>Dia</strong>.
+            </div>`;
+        return;
     }
 
-    const horariosIda = linha.horarios[diaEscolhido].ida;
-    const horariosVolta = linha.horarios[diaEscolhido].volta;
+    resultado.innerHTML = '<div class="text-center"><div class="spinner-border text-primary" role="status"></div></div>';
 
-    resultado.innerHTML = `
-      <h3 class="mb-3">${linha.nome}</h3>
-      <p><strong>Linhas:</strong> ${linha.numeros.join(", ")}</p>
+    try {
+        const response = await fetch("dados.json");
+        if (!response.ok) throw new Error("Erro ao carregar banco de dados.");
+        
+        const dados = await response.json();
+        const linha = dados[linhaEscolhida];
 
-      <h5 class="mt-4">Ida</h5>
-      <div class="row row-cols-3 row-cols-md-6 row-cols-lg-8 g-2">
-        ${horariosIda.map(h => `
-          <div class="col">
-            <div class="horario-box">${h}</div>
-          </div>
-        `).join("")}
-      </div>
+        if (!linha || !linha.horarios[diaEscolhido]) {
+            resultado.innerHTML = '<div class="alert alert-danger">Horários não encontrados para esta seleção.</div>';
+            return;
+        }
 
-      <h5 class="mt-4">Volta</h5>
-      <div class="row row-cols-3 row-cols-md-6 row-cols-lg-8 g-2">
-        ${horariosVolta.map(h => `
-          <div class="col">
-            <div class="horario-box">${h}</div>
-          </div>
-        `).join("")}
-      </div>
-    `;
+        const horarios = linha.horarios[diaEscolhido];
 
-  } catch (erro) {
-    resultado.innerHTML = "Erro ao carregar os dados.";
-    console.error(erro);
-  }
+// ... (parte inicial do seu fetch)
 
+const criarCards = (lista) => {
+    return `
+        <div class="horarios-grid">
+            ${lista.map(h => `<div class="horario-card shadow-sm">${h}</div>`).join("")}
+        </div>`;
+};
+
+
+          resultado.innerHTML = `
+              <div class="resultado-card slide-down" style="background-color: #ffffff; border-radius: 12px; padding: 25px;">
+                  <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-4">
+                      <h2 style="color: #0D1B2A; margin: 0;">${linha.nome}</h2>
+                      <span class="badge" style="background-color: #778DA9; padding: 10px;">Linha: ${linha.numeros.join(" / ")}</span>
+                  </div>
+
+                  <div class="row">
+                      <div class="col-md-6 mb-4">
+                          <h5 style="color: #415A77; font-weight: bold;"><i class="fa-solid fa-arrow-right me-2"></i>Ida (Bairro/Centro)</h5>
+                          ${criarCards(horarios.ida)}
+                      </div>
+                      <div class="col-md-6 mb-4">
+                          <h5 style="color: #415A77; font-weight: bold;"><i class="fa-solid fa-arrow-left me-2"></i>Volta (Centro/Bairro)</h5>
+                          ${criarCards(horarios.volta)}
+                      </div>
+                  </div>
+              </div>
+          `;
+
+    } catch (error) {
+        resultado.innerHTML = `<div class="alert alert-danger">Erro: ${error.message}</div>`;
+    }
 });
