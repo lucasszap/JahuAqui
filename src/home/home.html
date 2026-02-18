@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/src/home/style/nav.css">
+    <link rel="stylesheet" href="/src/home/style/style.css">
+    <link rel="stylesheet" href="/src/home/style/home.css">
+    <link rel="stylesheet" href="/src/home/style/slide.css">
+    
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <i class="fa-solid fa-map-location-dot" id="nav_logo">JauAqui</i>
+
+            <ul id="nav_list">
+                <li class="nav-item active">
+                    <a href="#home">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#noticias">Notícias</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#descubra">Descubra Mais</a>
+                </li>
+            </ul>
+
+            <button class="btn-default">
+                <a href="/src/login/login.html">Navegar</a>
+            </button>
+            <button id="mobile_btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav-item">
+                    <a href="#home">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#locais">Locais</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#descubra">Descubra Mais</a>
+                </li>
+            </ul> 
+
+            <button class="btn-default">
+                <a href="/src/login/login.html">Entrar</a>
+            </button>
+        </div>
+    </header>
+        <main id="content">
+            <section id="home">
+                
+                <div id="cta">
+                    <h1 class="title">
+                        Descubra o <span>melhor</span> de Jaú em um só lugar
+                    </h1>
+                    <p class="description">
+                        Bem-vindo ao Guia da Cidade de Jaú!
+                          Aqui você encontra tudo o que precisa 
+                          para conhecer a cidade: seus principais pontos turísticos, 
+                          opções de lazer, gastronomia, cultura, história e serviços úteis. 
+                          Navegue e descubra o melhor de Jaú, desde os lugares mais famosos até aqueles cantinhos que só quem é daqui conhece
+                    </p>
+
+                    <div id="cta_buttons">
+                        <a href="#" class="btn-default">
+                            Logar
+                        </a>
+                        <a href="#" class="btn-default">
+                            Cadastrar-se
+                        </a>
+                    </div>
+
+                    <div class="navegate-btn">
+                        <a href="#restaurante">
+                            <i class="fa-solid fa-utensils"></i>
+                        </a>
+
+                        <a href="#onibus">
+                            <i class="fa-solid fa-bus-simple"></i>
+                        </a>
+
+                        <a href="#comercio">
+                            <i class="fa-solid fa-store"></i>
+                        </a>
+                        
+                    </div>
+
+                </div>
+                
+                <div class="shape">
+                    <div id="slider">
+                        <input type="radio" name="radio-btn" id="radio1" checked>
+                        <input type="radio" name="radio-btn" id="radio2">
+                        <input type="radio" name="radio-btn" id="radio3">
+                        <input type="radio" name="radio-btn" id="radio4">
+
+                        <div class="slides">
+                            <div class="slide first">
+                                <img src="/src/image/casarao.jpg" alt="imagem 1">
+                            </div>
+                            <div class="slide">
+                                <img src="/src/image/lago.jpg" alt="imagem 2">
+                            </div>
+                            <div class="slide">
+                                <img src="/src/image/catedral2.jpg" alt="imagem 3">
+                            </div>
+                            <div class="slide">
+                                <img src="/src/image/expo.jpg" alt="imagem 4">
+                            </div>
+
+
+                            <div class="navigation">
+                                <div class="auto-btn1"></div>
+                                <div class="auto-btn2"></div>
+                                <div class="auto-btn3"></div>
+                                <div class="auto-btn4"></div>
+                            
+                            </div>
+                        </div>
+                        <div class="manual-navigation">
+                            <label for="radio1" class="manual-btn"></label>
+                            <label for="radio2" class="manual-btn"></label>
+                            <label for="radio3" class="manual-btn"></label>
+                            <label for="radio4" class="manual-btn"></label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script src="/src/javascript/slide.js"></script>
+    <script src="/src/javascript/script.js"></script>
+</body>
+</html>

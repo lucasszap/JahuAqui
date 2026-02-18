@@ -1,0 +1,90 @@
+
+.btn-light,
+.btn-light:hover,
+.btn-light:focus {
+  color: #333;
+  text-shadow: none; 
+}
+
+/* animação de fundo */
+body {
+  background: #0D1B2A;
+  overflow-x: hidden;
+  
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+
+  background:
+    radial-gradient(circle at 20% 30%, #415A77 0%, transparent 40%),
+    radial-gradient(circle at 70% 60%, #778DA9 0%, transparent 45%),
+    radial-gradient(circle at 50% 20%, #0D1B2A 0%, transparent 55%);
+
+  animation: shaderMove 25s linear infinite;
+  filter: blur(90px);
+  z-index: -1;
+}
+
+@keyframes shaderMove {
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(180deg); }
+  100% { transform: rotate(360deg); }
+}
+
+header, main{
+  color: #e0e1dd;
+}
+
+
+span{
+    color: #caf0f8;
+}
+
+.cover-container {
+  max-width: 42em;
+}
+
+
+
+
+.nav-masthead .nav-link {
+  color: rgba(255, 255, 255, .5);
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.btn-custom {
+  background-color: #0d1b2a; /* cor normal */
+  color: #fff;
+  border: none;
+  transition: 0.3s;
+  border: 3px #e0e1dd;
+}
+
+.btn-custom:hover {
+  background-color: #778da9; /* cor ao passar mouse */
+  color: #fff;
+}
+
+
+
+
