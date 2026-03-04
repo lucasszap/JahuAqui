@@ -1,0 +1,90 @@
+header{
+    background-color:#0d1b2a;
+}
+
+body{
+  background-color: #E0E1DD;
+}
+
+.user-link,
+.user-link:hover,
+.user-link:focus,
+.user-link:active {
+  color: #fff !important;
+}
+
+.search-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.btn-custom {
+  background-color: #0d1b2a; /* cor normal */
+  color: #fff;
+  border: none;
+  transition: 0.3s;
+  border: 3px #e0e1dd;
+}
+
+.btn-custom:hover {
+  background-color: #778da9; /* cor ao passar mouse */
+  color: #fff;
+}
+
+/* card principal */
+.resultado-card{
+  background:#fff;
+  padding:22px;
+  border-radius:14px;
+  box-shadow:0 4px 14px rgba(0,0,0,0.08);
+}
+
+/* grid dos horários */
+.horarios-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  gap:10px;
+}
+
+
+.horario-card{
+  background:#0d1b2a !important;
+  color:#fff;
+  padding:10px 0;
+  border-radius:10px;
+  text-align:center;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.2s;
+}
+
+/* hover bonito */
+.horario-card:hover{
+  transform:translateY(-3px);
+  background:#1b263b;
+  box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* animação */
+.slide-down{
+  animation: slideDown 1s ease;
+}
+
+@keyframes slideDown{
+  from{
+    opacity:0;
+    transform:translateY(-15px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+
+
+
+
