@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JahuAqui - Serviços em Jaú</title>
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/examples/blog/"
+    />
+    <script src="../../../presets/js/color-modes.js"></script>
+    <link href="../../../presets/css/bootstrap.min.css" rel="stylesheet" />
+    <meta name="theme-color" content="#712cf9" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        padding-top: 70px; 
+      }
+      .hero-jahu {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("https://images.unsplash.com");
+        background-size: cover;
+        padding: 100px 0;
+        color: white;
+        border-radius: 15px;
+      }
+      .card-servico {
+        transition: 0.3s;
+        border: 1px solid #333;
+      }
+      .card-servico:hover {
+        transform: scale(1.02);
+        border-color: #712cf9;
+      }
+      .navbar {
+        background-color: #111 !important;
+        border-bottom: 1px solid #333;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar navbar-expand-lg navbar-dark fixed-top px-4">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="../Home/index.html">JahuAqui</a>
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link text-white" href="../paginaNoticias/index.html"
+              >Notícias</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="../lazer/index.html">Lazer</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link text-white"
+              href="../transportePublico/index.html"
+              >Transporte Público</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary" href="../servicos/index.html"
+              >Serviços</a
+            >
+          </li>
+        </ul>
+
+        <form class="d-flex me-3" role="search">
+          <input
+            class="form-control bg-dark text-white border-secondary"
+            type="search"
+            placeholder="Pesquisar serviço..."
+          />
+        </form>
+
+        <img
+          src="https://github.com/mdo.png"
+          width="32"
+          height="32"
+          class="rounded-circle"
+          alt="Usuário"
+        />
+      </div>
+    </header>
+
+    <main class="container mt-4">
+      <section class="hero-jahu text-center mb-5">
+        <h1 class="display-4 fw-bold">Serviços em Jaú</h1>
+        <p class="lead">
+          Encontre os melhores profissionais da nossa cidade em um só lugar.
+        </p>
+      </section>
+
+     <!-- serivços -->
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card card-servico h-100 bg-body-tertiary">
+            <div class="card-body">
+              <div class="badge bg-primary mb-2">Manutenção</div>
+              <h5 class="card-title">Eletricista Jaú Centro</h5>
+              <p class="card-text text-body-secondary small">
+                Reparos, instalações de ar-condicionado e quadros de energia.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="#" class="btn btn-sm btn-outline-light">Ver Perfil</a>
+                <span class="text-muted small">Jaú/SP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exemplo: Fretes -->
+        <div class="col-md-4">
+          <div class="card card-servico h-100 bg-body-tertiary">
+            <div class="card-body">
+              <div class="badge bg-warning text-dark mb-2">Logística</div>
+              <h5 class="card-title">Fretes e Mudanças</h5>
+              <p class="card-text text-body-secondary small">
+                Atendimento para toda a região de Jaú, Bauru e Itapuí.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="#" class="btn btn-sm btn-outline-light">Ver Perfil</a>
+                <span class="text-muted small">Jaú/SP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Exemplo: Diarista -->
+        <div class="col-md-4">
+          <div class="card card-servico h-100 bg-body-tertiary">
+            <div class="card-body">
+              <div class="badge bg-info text-dark mb-2">Limpeza</div>
+              <h5 class="card-title">Serviços Domésticos</h5>
+              <p class="card-text text-body-secondary small">
+                Limpeza pós-obra e diarista residencial com referências.
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <a href="#" class="btn btn-sm btn-outline-light">Ver Perfil</a>
+                <span class="text-muted small">Jaú/SP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      class="mt-5 py-4 border-top border-secondary text-center text-secondary"
+    >
+      <p>&copy; 2025 JahuAqui - Conectando Jaú.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net"></script>
+  </body>
+</html>

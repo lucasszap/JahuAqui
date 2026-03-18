@@ -10,7 +10,7 @@
 
 body{
     background-color: #e0e1dd;
-    background: linear-gradient(to right, #778da9, #e0e1dd);
+    background: linear-gradient(to right, #6818A5, #e0e1dd);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,10 +22,10 @@ body {
 
   background: linear-gradient(
     160deg,
-    #0d1b2a,
-    #1B263B,
-    #415A77,
-    #778DA9
+    #310055,
+    #6818A5,
+    #8B2FC9,
+    #D283FF
   );
 
   color: #E0E1DD;
@@ -61,7 +61,7 @@ body {
 }
 
 .container button{
-    background-color: #c9d6ff;
+    background-color: #D283FF;
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -176,9 +176,9 @@ body {
 }
 
 .toggle{
-    background-color: #0d1b2a	;
+    background-color: #310055	;
     height: 100%;
-    background: linear-gradient(to right, #0d1b2a, #415a77);
+    background: linear-gradient(to right, #310055, #8B2FC9);
     color: #fff;
     position: relative;
     left: -100%;
@@ -225,7 +225,7 @@ body {
 }
 
 button:hover{
-    background-color: #415a77;
+    background-color: #8B2FC9;
     font-size: 15px;
     transition: 0.5s;
 }

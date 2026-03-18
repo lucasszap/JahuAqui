@@ -8,7 +8,7 @@
 
 /* animação de fundo */
 body {
-  background: #0D1B2A;
+  background: #310055;
   overflow-x: hidden;
   
 }
@@ -22,17 +22,13 @@ body::before {
   left: -50%;
 
   background:
-    radial-gradient(circle at 20% 30%, #415A77 0%, transparent 40%),
-    radial-gradient(circle at 70% 60%, #778DA9 0%, transparent 45%),
-    radial-gradient(circle at 50% 20%, #0D1B2A 0%, transparent 55%);
+    radial-gradient(circle at 20% 30%, #310055 0%, transparent 40%),
+    radial-gradient(circle at 70% 60%, #8B2FC9 0%, transparent 45%),
+    radial-gradient(circle at 50% 20%, #D283FF 0%, transparent 55%);
 
   animation: shaderMove 25s linear infinite;
   filter: blur(90px);
   z-index: -1;
-}
-
-select, h2{
-  color: #e0e1dd;
 }
 
 @keyframes shaderMove {
@@ -85,7 +81,7 @@ span{
 }
 
 .btn-custom:hover {
-  background-color: #778da9; /* cor ao passar mouse */
+  background-color: #8B2FC9; /* cor ao passar mouse */
   color: #fff;
 }
 
