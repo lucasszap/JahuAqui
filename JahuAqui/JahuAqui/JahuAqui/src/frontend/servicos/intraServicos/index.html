@@ -15,10 +15,10 @@
       href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="../../../header/header.css">
+
     <style>
-      body {
-        padding-top: 70px; 
-      }
+
       .hero-jahu {
         background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
           url("https://images.unsplash.com");
@@ -35,57 +35,27 @@
         transform: scale(1.02);
         border-color: #712cf9;
       }
-      .navbar {
-        background-color: #111 !important;
-        border-bottom: 1px solid #333;
-      }
+
     </style>
   </head>
   <body>
-    <header class="navbar navbar-expand-lg navbar-dark fixed-top px-4">
-      <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="../Home/index.html">JahuAqui</a>
 
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link text-white" href="../paginaNoticias/index.html"
-              >Notícias</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="../lazer/index.html">Lazer</a>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link text-white"
-              href="../transportePublico/index.html"
-              >Transporte Público</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-secondary" href="../servicos/index.html"
-              >Serviços</a
-            >
-          </li>
-        </ul>
-
-        <form class="d-flex me-3" role="search">
-          <input
-            class="form-control bg-dark text-white border-secondary"
-            type="search"
-            placeholder="Pesquisar serviço..."
-          />
-        </form>
-
-        <img
-          src="https://github.com/mdo.png"
-          width="32"
-          height="32"
-          class="rounded-circle"
-          alt="Usuário"
-        />
-      </div>
-    </header>
+    <header>
+  <nav>
+    <a class="logo" href="">JahuAqui</a>
+    <div class="mobile-menu">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+    <ul class="nav-list">
+      <li><a href="">Notícias</a></li>
+      <li><a href="">Transporte Público</a></li>
+      <li><a href="">Lazer</a></li>
+      <li><a href="">Serviços</a></li>
+    </ul>
+  </nav>
+</header>
 
     <main class="container mt-4">
       <section class="hero-jahu text-center mb-5">
@@ -106,7 +76,7 @@
                 Reparos, instalações de ar-condicionado e quadros de energia.
               </p>
               <div class="d-flex justify-content-between align-items-center">
-                <a href="#" class="btn btn-sm btn-outline-light">Ver Perfil</a>
+                <a href="#" class="btn btn-sm btn-outline-dark">Ver Perfil</a>
                 <span class="text-muted small">Jaú/SP</span>
               </div>
             </div>
@@ -123,7 +93,7 @@
                 Atendimento para toda a região de Jaú, Bauru e Itapuí.
               </p>
               <div class="d-flex justify-content-between align-items-center">
-                <a href="#" class="btn btn-sm btn-outline-light">Ver Perfil</a>
+                <a href="#" class="btn btn-sm btn-outline-dark">Ver Perfil</a>
                 <span class="text-muted small">Jaú/SP</span>
               </div>
             </div>
@@ -140,7 +110,7 @@
                 Limpeza pós-obra e diarista residencial com referências.
               </p>
               <div class="d-flex justify-content-between align-items-center">
-                <a href="#" class="btn btn-sm btn-outline-light">Ver Perfil</a>
+                <a href="#" class="btn btn-sm btn-outline-dark">Ver Perfil</a>
                 <span class="text-muted small">Jaú/SP</span>
               </div>
             </div>
@@ -156,5 +126,6 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net"></script>
+    <script src="../../../header/navbar.js"></script>
   </body>
 </html>

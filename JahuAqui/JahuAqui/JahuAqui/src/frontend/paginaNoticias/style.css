@@ -1,6 +1,6 @@
-/* ===== HEADER ===== */
-header{
-    background-color:#0d1b2a;
+
+h2{
+    color: #000;
 }
 
 input, #btn-entrar{
@@ -9,7 +9,7 @@ input, #btn-entrar{
     color:#fff;
 }
 
-/* ===== NOTÍCIAS ===== */
+
 section{
   background-color: #e0e1dd;
 }
