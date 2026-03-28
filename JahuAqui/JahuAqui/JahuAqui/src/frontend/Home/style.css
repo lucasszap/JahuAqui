@@ -1,0 +1,65 @@
+
+    :root {
+      --roxo: #3C096C;
+
+    }
+
+    body {
+      background-color: #f1f2f6;
+      font-family: Arial, sans-serif;
+    }    
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #3C096C, #3C096C);
+      color: white;
+      padding: 120px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-weight: bold;
+    }
+
+    /* BOTÕES */
+    .btn-roxo {
+      background-color: white;
+      color: var(--roxo);
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    .btn-roxo:hover {
+      background-color: #E0AAFF;
+    }
+
+    .btn-roxo2 {
+      background-color: var(--roxo);
+      color: white;
+      border-radius: 30px;
+    }
+
+    .btn-roxo2:hover {
+      background-color: #E0AAFF;
+    }
+
+
+    .card-custom {
+      border: none;
+      border-radius: 15px;
+      transition: 0.3s;
+    }
+
+    .card-custom:hover {
+      transform: translateY(-5px);
+    }
+
+
+    .bg-roxo {
+      background-color: var(--roxo-claro);
+    }
+
+
+    footer {
+      background-color: #f8f9fa;
+    }
