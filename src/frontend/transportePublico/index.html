@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../header/header.css">
+    <title>Transporte Público - Jaú</title>
+</head>
+<body">
+
+<header>
+  <nav>
+    <a class="logo" href="../../Home/index.html">JahuAqui</a>
+    <div class="mobile-menu">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+    <ul class="nav-list">
+      <li><a href="../../paginaNoticias/index.html">Notícias</a></li>
+      <li><a href="../../transportePublico/index.html">Transporte Público</a></li>
+      <li><a href="../../lazer/index.html">Lazer</a></li>
+      <li><a href="../../servicos/index.php">Serviços</a></li>
+      <?php if ($logado): ?>
+        <li><span class="text-white">👤 <?= htmlspecialchars($nomeUsuario) ?></span></li>
+        <li><a href="../../login/logout.php">Sair</a></li>
+      <?php else: ?>
+        <li><a href="../../login/cadastrar.php">Cadastrar-se</a></li>
+      <?php endif; ?>
+    </ul>
+
+    <div class="nav-buttons">
+      <?php if ($logado): ?>
+        <span>👤 <?= htmlspecialchars($nomeUsuario) ?></span>
+        <a href="../../login/logout.php">Sair</a>
+      <?php else: ?>
+        <a href="../../login/login.html">Cadastrar-se</a>
+      <?php endif; ?>
+    </div>
+  </nav>
+</header>
+
+  <main class="container my-5 p-5">
+    <div class="search-box p-4 bg-white shadow-sm rounded">
+      <h5 class="mb-4"><i class="fa-solid fa-bus me-2"></i>Consulte sua linha</h5>
+      <div class="row g-3"> 
+        <div class="col-md-4">
+          <select class="form-select" id="linhaSelect">
+            <option value="">Escolha a Linha</option>
+            <option value="america">AMÉRICA (VIA HOSP. A. CARVALHO)</option>
+            <option value="bela-vista">BELA VISTA</option>
+            <option value="cemiterio">CEMITÉRIO (VIA HOSP. SÃO JUDAS)</option>
+            <option value="cond-itauna">CONDOMÍNIO ITAUNA</option>
+            <option value="cond-primavera">CONDOMÍNIO PRIMAVERA</option>
+            <option value="jau-shopping">JAÚ SHOPPING</option>
+            <option value="jd-ipes">JD DOS IPÊS</option>
+            <option value="joao-balan">JOÃO BALAN I-II</option>
+            <option value="jorge-atalla">JORGE ATALLA</option>
+            <option value="maria-cibele">MARIA CIBELE (VIA JD.CAROLINA/SANTA CASA)</option>
+            <option value="maria-luiza">MARIA LUIZA IV (PAS SÃO BENEDITO)</option>
+            <option value="novo-horizonte">NOVO HORIZONTE (VIA MARIA IZABEL/SANTA ROSA)</option>
+            <option value="olimpia">OLÍMPIA</option>
+            <option value="orlando-ometto">ORLANDO OMETTO (VIA PEDRO OMETTO)</option>
+            <option value="paraty">PARATY</option>
+            <option value="pe-augusto-sani">PE. AUGUSTO SANI (VIA NOVA JAÚ)</option>
+            <option value="pedro-ometto">PEDRO OMETTO (VIA JD.BRASÍLIA)</option>
+            <option value="res-frei-galvao">RES. FREI GALVÃO (VIA FUNDAÇÃO) / TERMINAL</option>
+            <option value="rodrigues-branco">RODRIGUES BRANCO (VIA FUNDAÇÃO)</option>
+            <option value="santa-casa">SANTA CASA</option>
+            <option value="santa-helena">SANTA HELENA (VIA HOSP. SÃO JUDAS)</option>
+            <option value="sao-jose">SÃO JOSÉ</option>
+            <option value="vila-netinho">VILA NETINHO (VIA SANTA CASA)</option>
+            </select>
+        </div>
+
+        <div class="col-md-4">
+          <select class="form-select" id="diaSelect">
+            <option value="">Escolha o Dia</option>
+            <option value="uteis">Dias Úteis</option>
+            <option value="sabado">Sábado</option>
+            <option value="domingo">Domingo e Feriados</option>
+          </select>
+        </div>
+
+        <div class="col-md-4">
+          <button class="btn btn-custom w-100" id="btnProcurar">
+            <i class="fa-solid fa-magnifying-glass me-2"></i>Procurar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="resultado" class="mt-4"></div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script src="../../header/navbar.js"></script>
+</body>
+</html>
