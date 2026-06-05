@@ -1,0 +1,58 @@
+/* ═══════════════════════════════════════════════════
+   JAHUAQUI — footer.css
+═══════════════════════════════════════════════════ */
+
+footer {
+  background: #240046;
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-top: 1px solid rgba(198,125,255,.1);
+}
+
+.footer-logo {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 4px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links a {
+  font-size: 12px;
+  color: rgba(255,255,255,.38);
+  text-decoration: none;
+  text-transform: none;
+  transition: color .2s;
+}
+
+.footer-links a:hover {
+  color: rgba(255,255,255,.75);
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: rgba(255,255,255,.22);
+}
+
+@media (max-width: 600px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
