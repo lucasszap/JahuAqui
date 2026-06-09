@@ -73,6 +73,8 @@ if ($logado) {
       .user-name { color: #fff !important; font-size: 14px !important; font-weight: 400 !important; letter-spacing: 0 !important; white-space: nowrap; text-decoration: none !important; opacity: 1 !important; transform: none !important; transition: none !important; }
       .btn-sair { border: 1px solid #f0f0f0 !important; background: transparent !important; color: #fff !important; padding: 10px 20px !important; border-radius: 60px !important; font-size: inherit !important; font-family: inherit !important; font-weight: 400 !important; cursor: pointer; transition: background 0.3s, color 0.3s !important; letter-spacing: 0 !important; text-decoration: none !important; }
       .btn-sair:hover { background-color: #fff !important; color: #211b15 !important; }
+      .btn-admin { border: 1px solid #c97bff !important; background: rgba(108,63,197,.35) !important; color: #fff !important; padding: 10px 20px !important; border-radius: 60px !important; font-size: 13px !important; font-family: inherit !important; font-weight: 600 !important; cursor: pointer; transition: background 0.3s, color 0.3s !important; letter-spacing: 0 !important; text-decoration: none !important; white-space: nowrap; }
+      .btn-admin:hover { background: #c97bff !important; color: #240046 !important; opacity: 1 !important; }
 
       @media (max-width: 999px) {
         .nav-list { position: absolute; top: 6vh; right: 0; width: 60vw; height: 52.5vh; background: #240046; flex-direction: column; align-items: center; justify-content: space-around; transform: translateX(100%); transition: transform 0.3s ease-in; z-index: 3; }
@@ -98,9 +100,7 @@ if ($logado) {
         margin-bottom: 2rem;
       }
 
-      a{
-        text-transform: uppercase;
-      }
+      a { text-transform: uppercase; }
 
       .hero-jahu h1 { color: #fff; font-weight: 800; text-transform: uppercase; letter-spacing: -1px; }
       .hero-jahu p  { color: rgba(255,255,255,.85); }
@@ -181,8 +181,9 @@ if ($logado) {
   <body>
     <header>
       <nav>
-        <a href="/251256/jauAqui/home.html">
-          <img src="/251256/jauAqui/src/assets/images/home/logo.png" alt="JauAqui" class="logo">
+        <!-- Caminho relativo: php/services/ → ../../home.html -->
+        <a href="../../home.html">
+          <img src="../../src/assets/images/home/logo.png" alt="JauAqui" class="logo">
         </a>
         <div class="mobile-menu" aria-label="Abrir menu">
           <div class="line1"></div>
@@ -190,23 +191,26 @@ if ($logado) {
           <div class="line3"></div>
         </div>
         <ul class="nav-list">
-          <li><a href="/251256/jauAqui/home.html#news">Notícias</a></li>
-          <li><a href="/251256/jauAqui/home.html#tourism">Lazer</a></li>
-          <li><a href="/251256/jauAqui/home.html#transport">Transporte Público</a></li>
-          <li><a href="/251256/jauAqui/php/services/index.php">Serviços</a></li>
-          <li class="btn-mobile"><a href="/251256/jauAqui/src/pages/login.html">Cadastrar</a></li>
-          <li class="btn-mobile"><a href="/251256/jauAqui/src/pages/login.html">Entrar</a></li>
+          <li><a href="../../home.html#news">Notícias</a></li>
+          <li><a href="../../home.html#tourism">Lazer</a></li>
+          <li><a href="../../home.html#transport">Transporte Público</a></li>
+          <li><a href="index.php">Serviços</a></li>
+          <li class="btn-mobile"><a href="../../src/pages/login.html">Cadastrar</a></li>
+          <li class="btn-mobile"><a href="../../src/pages/login.html">Entrar</a></li>
         </ul>
         <?php if ($logado): ?>
           <div class="nav-user" style="display:flex;">
             <div class="user-avatar"><?= htmlspecialchars(mb_strtoupper(mb_substr($nomeUsuario, 0, 1))) ?></div>
             <span class="user-name"><?= htmlspecialchars(explode(' ', $nomeUsuario)[0]) ?></span>
-            <a href="/251256/jauAqui/php/auth/logout.php" class="btn-sair">Sair</a>
+            <?php if ($isAdmin): ?>
+              <a href="admin.php" class="btn-admin" title="Painel Administrativo">🛡️ Admin</a>
+            <?php endif; ?>
+            <a href="../auth/logout.php" class="btn-sair">Sair</a>
           </div>
         <?php else: ?>
           <div class="nav-buttons">
-            <a href="/251256/jauAqui/src/pages/login.html" class="btn-cadastrar">Cadastrar</a>
-            <a href="/251256/jauAqui/src/pages/login.html" class="btn-login">Entrar</a>
+            <a href="../../src/pages/login.html" class="btn-cadastrar">Cadastrar</a>
+            <a href="../../src/pages/login.html" class="btn-login">Entrar</a>
           </div>
         <?php endif; ?>
       </nav>
@@ -240,6 +244,7 @@ if ($logado) {
       </div>
     </main>
 
+    <!-- Modal de cadastro de serviço -->
     <div class="modal fade" id="modalServico" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -300,6 +305,7 @@ if ($logado) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+      // ── Navbar mobile ──────────────────────────────────────────────────
       class MobileNavbar {
         constructor(mobileMenu, navList, navLinks) {
           this.mobileMenu  = document.querySelector(mobileMenu);
@@ -337,6 +343,7 @@ if ($logado) {
       const mobileNavbar = new MobileNavbar(".mobile-menu", ".nav-list", ".nav-list li");
       mobileNavbar.init();
 
+      // ── Estado do usuário (injetado pelo PHP) ──────────────────────────
       const usuarioLogado = <?= $logado ? 'true' : 'false' ?>;
 
       const CORES_CATEGORIA = {
@@ -346,6 +353,7 @@ if ($logado) {
 
       if (usuarioLogado) document.getElementById('btnAbrirModal').style.display = 'inline-block';
 
+      // ── Preview da foto antes de enviar ───────────────────────────────
       document.getElementById('fotoServico').addEventListener('change', function () {
         const preview = document.getElementById('previewFoto');
         const file = this.files[0];
@@ -353,6 +361,7 @@ if ($logado) {
         else preview.style.display = 'none';
       });
 
+      // ── Máscara do telefone ────────────────────────────────────────────
       document.getElementById('telefoneServico').addEventListener('input', function () {
         let v = this.value.replace(/\D/g, '').slice(0, 11);
         if (v.length > 10)     v = v.replace(/^(\d{2})(\d{5})(\d{4})$/, '($1) $2-$3');
@@ -361,16 +370,23 @@ if ($logado) {
         this.value = v;
       });
 
-      const btnEnviar = document.getElementById('btnEnviar'); if (btnEnviar) btnEnviar.addEventListener('click', async () => {
-        const form = document.getElementById('formServico');
+      // ── Envio do formulário de serviço ────────────────────────────────
+      document.getElementById('btnEnviar').addEventListener('click', async () => {
+        const form     = document.getElementById('formServico');
         const feedback = document.getElementById('feedbackModal');
-        const btn = document.getElementById('btnEnviar');
+        const btn      = document.getElementById('btnEnviar');
+
         if (!form.checkValidity()) { form.reportValidity(); return; }
-        btn.disabled = true; btn.textContent = 'Publicando...';
+
+        btn.disabled = true;
+        btn.textContent = 'Publicando...';
         feedback.className = 'alert d-none';
+
         try {
-          const dados = new FormData(form); const resp = await fetch('/251256/jauAqui/php/services/cadastrar_servico.php', { method: 'POST', body: dados });
+          // Caminho relativo ao arquivo index.php (mesma pasta php/services/)
+          const resp = await fetch('cadastrar_servico.php', { method: 'POST', body: new FormData(form) });
           const json = await resp.json();
+
           if (json.status === 'sucesso') {
             feedback.className = 'alert alert-success';
             feedback.textContent = json.mensagem;
@@ -378,8 +394,12 @@ if ($logado) {
             document.getElementById('previewFoto').style.display = 'none';
           } else {
             const msgs = {
-              nao_logado: 'Você precisa estar logado.', campos_obrigatorios: 'Preencha todos os campos obrigatórios.',
-              tipo_imagem_invalido: 'Tipo de imagem inválido.', imagem_grande_demais: 'Imagem muito grande (máx. 2 MB).', erro_banco: 'Erro no servidor.',
+              nao_logado:            'Você precisa estar logado.',
+              campos_obrigatorios:   'Preencha todos os campos obrigatórios.',
+              categoria_invalida:    'Categoria inválida.',
+              tipo_imagem_invalido:  'Tipo de imagem inválido. Use JPG, PNG ou WEBP.',
+              imagem_grande_demais:  'Imagem muito grande (máx. 2 MB).',
+              erro_banco:            'Erro no servidor. Tente novamente.',
             };
             feedback.className = 'alert alert-danger';
             feedback.textContent = msgs[json.mensagem] || json.mensagem;
@@ -388,56 +408,137 @@ if ($logado) {
           feedback.className = 'alert alert-danger';
           feedback.textContent = 'Erro de conexão.';
         }
-        btn.disabled = false; btn.textContent = 'Publicar Serviço';
+
+        btn.disabled = false;
+        btn.textContent = 'Publicar Serviço';
       });
 
+      // ── Monta card de serviço com proteção XSS ────────────────────────
+      // CORREÇÃO DE SEGURANÇA (OWASP A03): uso de textContent e setAttribute
+      // em vez de interpolação direta em innerHTML para evitar XSS Stored.
       function montarCard(s) {
-        const cor = CORES_CATEGORIA[s.CATEGORIA] ?? 'secondary';
-        const link = `https://wa.me/55${s.TELEFONE.replace(/\D/g, '')}`;
-        const fotoHtml = s.FOTO
-          ? `<img src="${s.FOTO}" class="card-img-top" alt="${s.NOME}" />`
-          : `<div class="card-foto-placeholder">🔧</div>`;
-        return `
-          <div class="col-md-4">
-            <div class="card card-servico h-100">
-              ${fotoHtml}
-              <div class="card-body">
-                <span class="badge bg-${cor} mb-2">${s.CATEGORIA}</span>
-                <h5 class="card-title">${s.NOME}</h5>
-                <p class="card-text small mb-1">${s.DESCRICAO}</p>
-                <p class="card-text small text-muted mb-3">👤 ${s.PRESTADOR}</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <a href="${link}" target="_blank" rel="noopener" class="btn btn-sm btn-success">📲 WhatsApp</a>
-                  <span class="small text-muted">Jaú/SP</span>
-                </div>
-              </div>
-            </div>
-          </div>`;
+        const cor  = CORES_CATEGORIA[s.CATEGORIA] ?? 'secondary';
+        const tel  = (s.TELEFONE || '').replace(/\D/g, '');
+        const link = `https://wa.me/55${tel}`;
+
+        // Wrapper externo
+        const colDiv = document.createElement('div');
+        colDiv.className = 'col-md-4';
+
+        const cardDiv = document.createElement('div');
+        cardDiv.className = 'card card-servico h-100';
+
+        // Imagem ou placeholder
+        if (s.FOTO) {
+          const img = document.createElement('img');
+          img.className = 'card-img-top';
+          // src e alt via setAttribute para evitar injeção de event handlers
+          img.setAttribute('src', s.FOTO);
+          img.setAttribute('alt', s.NOME || 'Foto do serviço');
+          cardDiv.appendChild(img);
+        } else {
+          const placeholder = document.createElement('div');
+          placeholder.className = 'card-foto-placeholder';
+          placeholder.textContent = '🔧';
+          cardDiv.appendChild(placeholder);
+        }
+
+        // Body
+        const body = document.createElement('div');
+        body.className = 'card-body';
+
+        const badge = document.createElement('span');
+        badge.className = `badge bg-${cor} mb-2`;
+        badge.textContent = s.CATEGORIA || '';
+
+        const titulo = document.createElement('h5');
+        titulo.className = 'card-title';
+        titulo.textContent = s.NOME || '';
+
+        const desc = document.createElement('p');
+        desc.className = 'card-text small mb-1';
+        desc.textContent = s.DESCRICAO || '';
+
+        const prestador = document.createElement('p');
+        prestador.className = 'card-text small text-muted mb-3';
+        prestador.textContent = '👤 ' + (s.PRESTADOR || '');
+
+        const footer = document.createElement('div');
+        footer.className = 'd-flex justify-content-between align-items-center';
+
+        const btnWa = document.createElement('a');
+        btnWa.className = 'btn btn-sm btn-success';
+        btnWa.setAttribute('href', link);
+        btnWa.setAttribute('target', '_blank');
+        btnWa.setAttribute('rel', 'noopener');
+        btnWa.textContent = '📲 WhatsApp';
+
+        const local = document.createElement('span');
+        local.className = 'small text-muted';
+        local.textContent = 'Jaú/SP';
+
+        footer.appendChild(btnWa);
+        footer.appendChild(local);
+
+        body.appendChild(badge);
+        body.appendChild(titulo);
+        body.appendChild(desc);
+        body.appendChild(prestador);
+        body.appendChild(footer);
+
+        cardDiv.appendChild(body);
+        colDiv.appendChild(cardDiv);
+
+        return colDiv;
       }
 
+      // ── Carregamento e filtro de serviços ─────────────────────────────
       let categoriaAtiva = 'Todos';
 
       async function carregarServicos() {
         const grade = document.getElementById('grade-servicos');
         grade.classList.add('saindo');
         await new Promise(r => setTimeout(r, 300));
-        grade.innerHTML = `<div class="col-12 text-center py-5" style="color:#555">
-          <div class="spinner-border" style="color:#6c3fc5" role="status"></div>
-          <p class="mt-2">Carregando serviços...</p></div>`;
+
+        grade.innerHTML = '';
+        const spinner = document.createElement('div');
+        spinner.className = 'col-12 text-center py-5';
+        spinner.innerHTML = '<div class="spinner-border" style="color:var(--purple-main)" role="status"></div><p class="mt-2">Carregando serviços...</p>';
+        grade.appendChild(spinner);
         grade.classList.remove('saindo');
+
         try {
-            const lista = await (await fetch(`/251256/jauAqui/php/services/buscar_servicos.php?categoria=${encodeURIComponent(categoriaAtiva)}`)).json();          grade.classList.add('saindo');
+          // Caminho relativo ao index.php (mesma pasta php/services/)
+          const url  = `buscar_servicos.php?categoria=${encodeURIComponent(categoriaAtiva)}`;
+          const resp = await fetch(url);
+          const lista = await resp.json();
+
+          grade.classList.add('saindo');
           await new Promise(r => setTimeout(r, 150));
-          grade.innerHTML = lista.length === 0
-            ? `<div class="col-12 text-center py-5" style="color:#555"><p>Nenhum serviço encontrado nesta categoria.</p></div>`
-            : lista.map(montarCard).join('');
+          grade.innerHTML = '';
+
+          if (lista.length === 0) {
+            const vazio = document.createElement('div');
+            vazio.className = 'col-12 text-center py-5';
+            vazio.style.color = '#555';
+            vazio.innerHTML = '<p>Nenhum serviço encontrado nesta categoria.</p>';
+            grade.appendChild(vazio);
+          } else {
+            lista.forEach(s => grade.appendChild(montarCard(s)));
+          }
           grade.classList.remove('saindo');
+
         } catch (e) {
-          grade.innerHTML = `<div class="col-12 text-center py-5 text-danger"><p>Erro ao carregar serviços.</p></div>`;
+          grade.innerHTML = '';
+          const err = document.createElement('div');
+          err.className = 'col-12 text-center py-5 text-danger';
+          err.innerHTML = '<p>Erro ao carregar serviços.</p>';
+          grade.appendChild(err);
           grade.classList.remove('saindo');
         }
       }
 
+      // ── Filtros por categoria ─────────────────────────────────────────
       document.querySelectorAll('.filtros .btn').forEach(btn => {
         btn.addEventListener('click', () => {
           document.querySelectorAll('.filtros .btn').forEach(b => b.classList.remove('active'));

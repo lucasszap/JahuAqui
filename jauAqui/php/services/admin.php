@@ -3,7 +3,7 @@ session_start();
 include("../config/conexao.php");
 
 if (!isset($_SESSION['usuario_id'])) {
-    header("Location: /jauAqui/src/pages/login.html");
+    header("Location: ../../src/pages/login.html");
     exit;
 }
 
@@ -277,7 +277,7 @@ body {
             <small>JahuAqui — Moderação de Serviços</small>
         </div>
 
-        <a href="/jauAqui/php/services/index.php" class="btn-voltar">
+        <a href="index.php" class="btn-voltar">
             ← Voltar ao site
         </a>
 

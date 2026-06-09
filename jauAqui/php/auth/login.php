@@ -36,6 +36,9 @@ if (!password_verify($senha, $usuario['SENHA'])) {
     exit;
 }
 
+// Regenera o ID de sessão para prevenir Session Fixation (OWASP A07)
+session_regenerate_id(true);
+
 $_SESSION['usuario_id'] = $usuario['id'];
 $_SESSION['nome']       = $usuario['NOME'];
 

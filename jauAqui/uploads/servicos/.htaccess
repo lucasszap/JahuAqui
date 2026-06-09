@@ -1,0 +1,34 @@
+# JahuAqui — Proteção do diretório de uploads
+# Impede a execução de qualquer script nesta pasta.
+# Apenas arquivos de imagem devem ser servidos aqui.
+
+# Apache 2.4+
+<IfModule mod_authz_core.c>
+    <FilesMatch "\.(php|php3|php4|php5|phtml|pl|py|jsp|asp|sh|cgi)$">
+        Require all denied
+    </FilesMatch>
+</IfModule>
+
+# Apache 2.2 (compatibilidade)
+<IfModule !mod_authz_core.c>
+    <FilesMatch "\.(php|php3|php4|php5|phtml|pl|py|jsp|asp|sh|cgi)$">
+        Order Deny,Allow
+        Deny from all
+    </FilesMatch>
+</IfModule>
+
+# Desativa o PHP nesta pasta (se o módulo estiver ativo)
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php8.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+
+# Força Content-Type correto para imagens (evita MIME sniffing)
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
